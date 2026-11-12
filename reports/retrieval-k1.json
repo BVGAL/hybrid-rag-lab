@@ -1,0 +1,294 @@
+{
+  "questions": 16,
+  "top_k": 1,
+  "metrics": {
+    "bm25": {
+      "recall": 0.5625,
+      "mrr": 0.625
+    },
+    "semantic": {
+      "recall": 0.875,
+      "mrr": 0.9375
+    },
+    "hybrid": {
+      "recall": 0.625,
+      "mrr": 0.6875
+    }
+  },
+  "details": [
+    {
+      "question": "Come si risolve VPN-403 nella procedura IT-VPN-07?",
+      "expected": [
+        "vpn.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "vpn.md"
+        ],
+        "semantic": [
+          "vpn.md"
+        ],
+        "hybrid": [
+          "vpn.md"
+        ]
+      }
+    },
+    {
+      "question": "HR-FER-01: quanto anticipo serve per le ferie?",
+      "expected": [
+        "ferie.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "ferie.md"
+        ],
+        "semantic": [
+          "ferie.md"
+        ],
+        "hybrid": [
+          "ferie.md"
+        ]
+      }
+    },
+    {
+      "question": "Qual è il limite per i pasti in FIN-EXP-04?",
+      "expected": [
+        "rimborsi.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "rimborsi.md"
+        ],
+        "semantic": [
+          "rimborsi.md"
+        ],
+        "hybrid": [
+          "rimborsi.md"
+        ]
+      }
+    },
+    {
+      "question": "Ogni quanto si inviano aggiornamenti per un incidente SEV-1?",
+      "expected": [
+        "incidenti.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "incidenti.md"
+        ],
+        "semantic": [
+          "incidenti.md"
+        ],
+        "hybrid": [
+          "incidenti.md"
+        ]
+      }
+    },
+    {
+      "question": "Ho perso il cellulare e non riesco più a confermare l'accesso. Cosa devo fare?",
+      "expected": [
+        "account_mfa.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "vpn.md"
+        ],
+        "semantic": [
+          "account_mfa.md"
+        ],
+        "hybrid": [
+          "vpn.md"
+        ]
+      }
+    },
+    {
+      "question": "Vorrei assentarmi per una settimana il mese prossimo: dove chiedo il via libera?",
+      "expected": [
+        "ferie.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "incidenti.md"
+        ],
+        "semantic": [
+          "ferie.md"
+        ],
+        "hybrid": [
+          "lavoro_remoto.md"
+        ]
+      }
+    },
+    {
+      "question": "Posso svolgere le mie mansioni dalla mia abitazione tre volte ogni settimana?",
+      "expected": [
+        "lavoro_remoto.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "incidenti.md"
+        ],
+        "semantic": [
+          "lavoro_remoto.md"
+        ],
+        "hybrid": [
+          "lavoro_remoto.md"
+        ]
+      }
+    },
+    {
+      "question": "Sono appena stato assunto: chi mi prepara il computer e le credenziali?",
+      "expected": [
+        "onboarding.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "incidenti.md"
+        ],
+        "semantic": [
+          "onboarding.md"
+        ],
+        "hybrid": [
+          "onboarding.md"
+        ]
+      }
+    },
+    {
+      "question": "Il servizio è completamente fermo per tutti gli utenti: chi avverto subito?",
+      "expected": [
+        "incidenti.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "incidenti.md"
+        ],
+        "semantic": [
+          "incidenti.md"
+        ],
+        "hybrid": [
+          "incidenti.md"
+        ]
+      }
+    },
+    {
+      "question": "Ho pagato una cena durante un viaggio di lavoro: entro quando invio lo scontrino?",
+      "expected": [
+        "rimborsi.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "lavoro_remoto.md"
+        ],
+        "semantic": [
+          "rimborsi.md"
+        ],
+        "hybrid": [
+          "lavoro_remoto.md"
+        ]
+      }
+    },
+    {
+      "question": "Devo comprare un biglietto ferroviario per andare da un cliente. Serve un'approvazione?",
+      "expected": [
+        "trasferte.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "lavoro_remoto.md"
+        ],
+        "semantic": [
+          "trasferte.md"
+        ],
+        "hybrid": [
+          "rimborsi.md"
+        ]
+      }
+    },
+    {
+      "question": "Come raggiungo la rete dell'ufficio quando sono fuori sede?",
+      "expected": [
+        "vpn.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "vpn.md"
+        ],
+        "semantic": [
+          "lavoro_remoto.md"
+        ],
+        "hybrid": [
+          "lavoro_remoto.md"
+        ]
+      }
+    },
+    {
+      "question": "Quali permessi e passaggi tecnici servono per lavorare da casa e collegarmi alla rete interna?",
+      "expected": [
+        "lavoro_remoto.md",
+        "vpn.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "vpn.md"
+        ],
+        "semantic": [
+          "lavoro_remoto.md"
+        ],
+        "hybrid": [
+          "lavoro_remoto.md"
+        ]
+      }
+    },
+    {
+      "question": "Come ottengo l'autorizzazione per il viaggio e poi il rimborso delle spese?",
+      "expected": [
+        "trasferte.md",
+        "rimborsi.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "rimborsi.md"
+        ],
+        "semantic": [
+          "rimborsi.md"
+        ],
+        "hybrid": [
+          "rimborsi.md"
+        ]
+      }
+    },
+    {
+      "question": "Dove visualizzo quanti giorni di ferie mi restano?",
+      "expected": [
+        "ferie.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "ferie.md"
+        ],
+        "semantic": [
+          "ferie.md"
+        ],
+        "hybrid": [
+          "ferie.md"
+        ]
+      }
+    },
+    {
+      "question": "La checklist HR-ONB-05 assegna automaticamente tutti gli accessi del team?",
+      "expected": [
+        "onboarding.md"
+      ],
+      "retrieved": {
+        "bm25": [
+          "onboarding.md"
+        ],
+        "semantic": [
+          "onboarding.md"
+        ],
+        "hybrid": [
+          "onboarding.md"
+        ]
+      }
+    }
+  ]
+}

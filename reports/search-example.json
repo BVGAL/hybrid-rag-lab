@@ -1,0 +1,29 @@
+{
+  "question": "Ho perso il cellulare e non riesco più a confermare l’accesso. Cosa devo fare?",
+  "results": [
+    {
+      "id": 8,
+      "source": "vpn.md",
+      "part": 1,
+      "text": "# Accesso alla rete aziendale — IT-VPN-07 Documento dimostrativo di Aurora Labs; nomi e configurazioni sono fittizi. Per collegarsi alla rete interna da casa o durante una trasferta, aprire il client Aurora Connect sul portatile aziendale. Selezionare il profilo Aurora Internal, inserire l'account aziendale e confermare la richiesta nell'app di autenticazione. L'indicatore verde Collegato conferma che la VPN è attiva. Se appare l'errore VPN-403, controllare che l'app di autenticazione abbia completato la conferma e che l'account appartenga al gruppo Remote Access. Se il problema continua, aprire un ticket nella categoria Rete allegando il codice di errore e l'orario del tentativo. Il service desk verifica l'appartenenza al gruppo. Non inviare password o codici temporanei nel ticket. Prima di riavviare il client, verificare la connessione Internet. Per problemi con il secondo fattore consultare IT-ID-03. Le richieste di autorizzazione al lavoro da remoto seguono HR-REM-02 e non si risolvono modificando la VPN.",
+      "bm25_rank": 1,
+      "semantic_rank": 2
+    },
+    {
+      "id": 1,
+      "source": "account_mfa.md",
+      "part": 1,
+      "text": "# Account e autenticazione — IT-ID-03 Documento dimostrativo di Aurora Labs; procedura fittizia. Il secondo fattore protegge l'accesso all'account oltre alla password. All'attivazione dell'account, il dipendente registra l'app di autenticazione e conserva i codici di recupero nel gestore password aziendale. Se il telefono viene smarrito o sostituito senza trasferire l'app, non creare un nuovo account. Aprire una richiesta al service desk tramite il canale di recupero, indicando il proprio identificativo aziendale. Il service desk verifica l'identità con una videochiamata e con il responsabile, revoca il vecchio dispositivo e abilita la registrazione di un nuovo secondo fattore. Il reset della sola password non ripristina l'app di autenticazione. Per una password dimenticata usare la funzione Recupera password del portale account. Se si sospetta un accesso non autorizzato, segnalare subito un incidente secondo IT-INC-01, anche quando l'accesso al portale funziona ancora.",
+      "bm25_rank": 3,
+      "semantic_rank": 1
+    },
+    {
+      "id": 5,
+      "source": "onboarding.md",
+      "part": 1,
+      "text": "# Primo giorno in azienda — HR-ONB-05 Documento dimostrativo di Aurora Labs; procedura fittizia. Prima dell'arrivo di una nuova persona, l'ufficio People apre una richiesta di onboarding almeno cinque giorni lavorativi prima della data di ingresso. Il responsabile indica ruolo, team e applicazioni necessarie. IT prepara il portatile aziendale e l'account sulla base di questa richiesta. Il primo giorno il dipendente ritira il dispositivo, verifica l'accesso all'account e registra il secondo fattore seguendo IT-ID-03. Il responsabile presenta il team e concorda gli obiettivi della prima settimana. Il tutor assegnato aiuta a individuare documentazione, canali di comunicazione e referenti. L'accesso ai sistemi segue il principio del minimo privilegio: un nuovo dipendente non riceve automaticamente tutti i permessi del team. Per strumenti aggiuntivi serve una richiesta del responsabile al service desk. La checklist si conclude quando People, responsabile e IT hanno completato le rispettive attività.",
+      "bm25_rank": 2,
+      "semantic_rank": 6
+    }
+  ]
+}

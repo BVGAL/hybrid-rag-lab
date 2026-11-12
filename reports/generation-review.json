@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-12",
+  "generation_report_sha256": "d5a0bda2e16fe6ece5f0af80935a310cc115ae9cfc0dd9e59aa392b960f6c1cc",
+  "method": "Qualitative comparison of the saved answers with the retrieved passages. This development review is not an independent benchmark.",
+  "summary": {
+    "answerable_cases": 6,
+    "answerable_cases_with_citations": 5,
+    "out_of_range_citation_numbers": 0,
+    "correct_abstentions_on_unanswerable_cases": 2,
+    "unanswerable_cases": 2,
+    "incorrect_abstentions_on_answerable_cases": 1
+  },
+  "cases": [
+    {
+      "id": "vpn_error",
+      "status": "supported",
+      "notes": "Both steps match vpn.md: authentication/group checks, then a Network ticket with the error code and attempt time. Citation [1] refers to that passage."
+    },
+    {
+      "id": "lost_phone",
+      "status": "supported",
+      "notes": "Recovery channel, identity verification, device revocation and new MFA registration match account_mfa.md. Citation [2] is attached to the paragraph rather than every sentence."
+    },
+    {
+      "id": "holiday_notice",
+      "status": "supported",
+      "notes": "Ten working days and manager approval after checking coverage match ferie.md and citation [1]."
+    },
+    {
+      "id": "meal_limit",
+      "status": "supported_but_incomplete",
+      "notes": "The stated EUR 30 per person per day is supported by rimborsi.md [1]. The answer omits the documented exception for a higher amount approved in advance."
+    },
+    {
+      "id": "travel_and_expenses",
+      "status": "supported",
+      "notes": "The answer correctly separates TravelDesk/approval before booking [2] from ExpenseDesk/five working days/receipts and approval [1]."
+    },
+    {
+      "id": "false_premise",
+      "status": "incorrect_abstention",
+      "notes": "The answer refuses instead of correcting EUR 100 to EUR 30, even though rimborsi.md is present as context [1]."
+    },
+    {
+      "id": "missing_contact",
+      "status": "correct_abstention",
+      "notes": "No retrieved passage contains the director's phone number. The answer abstains without inventing a contact."
+    },
+    {
+      "id": "missing_foreign_policy",
+      "status": "correct_abstention",
+      "notes": "The remote-work document explicitly does not define authorization for working abroad. The answer abstains."
+    }
+  ],
+  "limitations": [
+    "Prompts were refined on these same cases; no held-out generation set was used.",
+    "Valid citation numbers do not establish support for a claim.",
+    "The meal answer omits an exception and the false-premise answer incorrectly abstains.",
+    "Generation can vary across versions, hardware and model revisions, despite temperature zero and a fixed seed."
+  ]
+}

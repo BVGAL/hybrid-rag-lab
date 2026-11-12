@@ -1,0 +1,19 @@
+[
+  {"question": "Come si risolve VPN-403 nella procedura IT-VPN-07?", "sources": ["vpn.md"]},
+  {"question": "HR-FER-01: quanto anticipo serve per le ferie?", "sources": ["ferie.md"]},
+  {"question": "Qual è il limite per i pasti in FIN-EXP-04?", "sources": ["rimborsi.md"]},
+  {"question": "Ogni quanto si inviano aggiornamenti per un incidente SEV-1?", "sources": ["incidenti.md"]},
+  {"question": "Ho perso il cellulare e non riesco più a confermare l'accesso. Cosa devo fare?", "sources": ["account_mfa.md"]},
+  {"question": "Vorrei assentarmi per una settimana il mese prossimo: dove chiedo il via libera?", "sources": ["ferie.md"]},
+  {"question": "Posso svolgere le mie mansioni dalla mia abitazione tre volte ogni settimana?", "sources": ["lavoro_remoto.md"]},
+  {"question": "Sono appena stato assunto: chi mi prepara il computer e le credenziali?", "sources": ["onboarding.md"]},
+  {"question": "Il servizio è completamente fermo per tutti gli utenti: chi avverto subito?", "sources": ["incidenti.md"]},
+  {"question": "Ho pagato una cena durante un viaggio di lavoro: entro quando invio lo scontrino?", "sources": ["rimborsi.md"]},
+  {"question": "Devo comprare un biglietto ferroviario per andare da un cliente. Serve un'approvazione?", "sources": ["trasferte.md"]},
+  {"question": "Come raggiungo la rete dell'ufficio quando sono fuori sede?", "sources": ["vpn.md"]},
+  {"question": "Quali permessi e passaggi tecnici servono per lavorare da casa e collegarmi alla rete interna?", "sources": ["lavoro_remoto.md", "vpn.md"]},
+  {"question": "Come ottengo l'autorizzazione per il viaggio e poi il rimborso delle spese?", "sources": ["trasferte.md", "rimborsi.md"]},
+  {"question": "Dove visualizzo quanti giorni di ferie mi restano?", "sources": ["ferie.md"]},
+  {"question": "La checklist HR-ONB-05 assegna automaticamente tutti gli accessi del team?", "sources": ["onboarding.md"]}
+]
+

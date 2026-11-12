@@ -1,0 +1,58 @@
+[
+  {
+    "id": "vpn_error",
+    "question": "Come risolvo l'errore VPN-403?",
+    "sources": ["vpn.md"],
+    "expected": "Controllare la conferma nell'app e il gruppo Remote Access; se persiste, ticket Rete con codice e orario.",
+    "answerable": true
+  },
+  {
+    "id": "lost_phone",
+    "question": "Ho perso il cellulare e non riesco più a confermare l'accesso. Cosa devo fare?",
+    "sources": ["account_mfa.md"],
+    "expected": "Canale di recupero del service desk, identificativo e verifica dell'identità; revoca del vecchio dispositivo e registrazione del nuovo secondo fattore.",
+    "answerable": true
+  },
+  {
+    "id": "holiday_notice",
+    "question": "Con quanto anticipo devo richiedere le ferie e chi le approva?",
+    "sources": ["ferie.md"],
+    "expected": "Almeno dieci giorni lavorativi prima; approvazione del responsabile del team.",
+    "answerable": true
+  },
+  {
+    "id": "meal_limit",
+    "question": "Quanto posso spendere per i pasti durante una trasferta?",
+    "sources": ["rimborsi.md"],
+    "expected": "Trenta euro a persona al giorno; autorizzazione preventiva per importi superiori.",
+    "answerable": true
+  },
+  {
+    "id": "travel_and_expenses",
+    "question": "Come ottengo l'autorizzazione per il viaggio e poi il rimborso delle spese?",
+    "sources": ["trasferte.md", "rimborsi.md"],
+    "expected": "TravelDesk con approvazione prima di prenotare; nota in ExpenseDesk entro cinque giorni lavorativi dal rientro, con ricevute e codice trasferta.",
+    "answerable": true
+  },
+  {
+    "id": "false_premise",
+    "question": "Confermi che il limite dei pasti è di cento euro al giorno?",
+    "sources": ["rimborsi.md"],
+    "expected": "Correggere la premessa: trenta euro a persona al giorno.",
+    "answerable": true
+  },
+  {
+    "id": "missing_contact",
+    "question": "Qual è il numero di cellulare del direttore generale di Aurora Labs?",
+    "sources": [],
+    "expected": "Astenersi: il numero non è nei documenti.",
+    "answerable": false
+  },
+  {
+    "id": "missing_foreign_policy",
+    "question": "Quali sono le condizioni per lavorare dall'estero per sei mesi?",
+    "sources": [],
+    "expected": "Astenersi: i documenti non definiscono le autorizzazioni per lavorare dall'estero.",
+    "answerable": false
+  }
+]

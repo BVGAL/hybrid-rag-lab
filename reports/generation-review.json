@@ -1,61 +1,82 @@
 {
   "date": "2026-11-12",
-  "generation_report_sha256": "d5a0bda2e16fe6ece5f0af80935a310cc115ae9cfc0dd9e59aa392b960f6c1cc",
-  "method": "Qualitative comparison of the saved answers with the retrieved passages. This development review is not an independent benchmark.",
+  "generation_report_sha256": "64f7d11a3a5bd375508678b3c5df77861f79e90ca4467eb064b6924c6e05985a",
+  "method": "Qualitative comparison of saved answers with retrieved passages. This development review is not an independent benchmark or a user sign-off.",
   "summary": {
-    "answerable_cases": 6,
-    "answerable_cases_with_citations": 5,
+    "answerable_cases": 9,
+    "answerable_cases_with_citations": 9,
     "out_of_range_citation_numbers": 0,
-    "correct_abstentions_on_unanswerable_cases": 2,
-    "unanswerable_cases": 2,
-    "incorrect_abstentions_on_answerable_cases": 1
+    "correct_abstentions_on_unanswerable_cases": 3,
+    "unanswerable_cases": 3,
+    "incorrect_abstentions_on_answerable_cases": 0
   },
   "cases": [
     {
       "id": "vpn_error",
       "status": "supported",
-      "notes": "Both steps match vpn.md: authentication/group checks, then a Network ticket with the error code and attempt time. Citation [1] refers to that passage."
+      "notes": "Authentication/group checks, then a Network ticket with error code and time; no passwords or temporary codes. All claims match vpn.md [1]."
     },
     {
       "id": "lost_phone",
       "status": "supported",
-      "notes": "Recovery channel, identity verification, device revocation and new MFA registration match account_mfa.md. Citation [2] is attached to the paragraph rather than every sentence."
+      "notes": "Recovery channel, identifier, identity verification, device revocation and new MFA match account_mfa.md [2]. The first sentence has no individual citation; the next sentence cites the shared passage."
     },
     {
       "id": "holiday_notice",
       "status": "supported",
-      "notes": "Ten working days and manager approval after checking coverage match ferie.md and citation [1]."
+      "notes": "Ten working days and manager approval after checking coverage match ferie.md [1]."
     },
     {
       "id": "meal_limit",
-      "status": "supported_but_incomplete",
-      "notes": "The stated EUR 30 per person per day is supported by rimborsi.md [1]. The answer omits the documented exception for a higher amount approved in advance."
+      "status": "exception_restored_with_remaining_omission",
+      "notes": "The answer now includes EUR 30 per person per day and prior authorization for higher amounts, supported by rimborsi.md [1]. It still does not say that the authorization must be attached to the expense note."
     },
     {
       "id": "travel_and_expenses",
       "status": "supported",
-      "notes": "The answer correctly separates TravelDesk/approval before booking [2] from ExpenseDesk/five working days/receipts and approval [1]."
+      "notes": "TravelDesk and manager approval before booking are supported by trasferte.md [2]. ExpenseDesk within five working days, receipts, trip code and manager approval before administrative review are supported by rimborsi.md [1]."
     },
     {
       "id": "false_premise",
-      "status": "incorrect_abstention",
-      "notes": "The answer refuses instead of correcting EUR 100 to EUR 30, even though rimborsi.md is present as context [1]."
+      "status": "corrected_premise",
+      "notes": "The previous incorrect abstention is replaced by a direct correction from EUR 100 to EUR 30 per person per day, supported by rimborsi.md [1]. It does not repeat the exception."
     },
     {
       "id": "missing_contact",
       "status": "correct_abstention",
-      "notes": "No retrieved passage contains the director's phone number. The answer abstains without inventing a contact."
+      "notes": "Exact refusal with no citations: the phone number is absent."
     },
     {
       "id": "missing_foreign_policy",
       "status": "correct_abstention",
-      "notes": "The remote-work document explicitly does not define authorization for working abroad. The answer abstains."
+      "notes": "Exact refusal with no citations: authorization for working abroad is not defined."
+    },
+    {
+      "id": "false_premise_digits",
+      "status": "corrected_but_incomplete",
+      "notes": "Corrects EUR 50 to EUR 30 per person per day with rimborsi.md [1]. The additional expected prior-authorization exception and attachment are omitted."
+    },
+    {
+      "id": "meal_exception",
+      "status": "supported",
+      "notes": "Prior authorization attached to the expense note matches rimborsi.md [1]. The brief answer does not repeat the per-person/per-day units of the underlying limit."
+    },
+    {
+      "id": "hotel_limit",
+      "status": "supported",
+      "notes": "EUR 120 for a hotel night and manager approval before confirming the room match trasferte.md [1]. The citation is at the end of the two-sentence paragraph."
+    },
+    {
+      "id": "missing_extraeuropean_policy",
+      "status": "correct_abstention",
+      "notes": "Exact refusal with no citations: extra-European travel rules are not defined."
     }
   ],
   "limitations": [
-    "Prompts were refined on these same cases; no held-out generation set was used.",
-    "Valid citation numbers do not establish support for a claim.",
-    "The meal answer omits an exception and the false-premise answer incorrectly abstains.",
+    "Both prompt and model changed from the previous published run; gains cannot be attributed to the prompt alone.",
+    "Prompts were refined on development cases and the expanded set was inspected during development; this is not a held-out benchmark.",
+    "The meal-limit answer restores prior approval but omits the required attachment. Confirmation questions do not repeat the exception.",
+    "Some citations are attached to a paragraph instead of every sentence. Valid reference numbers alone do not establish support.",
     "Generation can vary across versions, hardware and model revisions, despite temperature zero and a fixed seed."
   ]
 }

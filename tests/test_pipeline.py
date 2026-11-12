@@ -130,6 +130,7 @@ def test_generation_sends_numbered_sources_to_local_ollama(monkeypatch):
         payload = json.loads(request.data)
         assert payload["model"] == "test-model"
         assert payload["stream"] is False
+        assert payload["think"] is False
         assert "Aprire Aurora Connect." in payload["prompt"]
         assert "Non inventare" in payload["system"]
         return io.BytesIO(json.dumps({"response": "Apri Aurora Connect [1]."}).encode())

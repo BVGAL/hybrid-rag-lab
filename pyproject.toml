@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "hybrid-rag-lab"
-version = "0.2.0"
+version = "0.2.1"
 description = "Local hybrid RAG with BM25, multilingual embeddings, and cited Ollama answers"
 requires-python = ">=3.11,<3.13"
 dependencies = ["fastembed==0.7.4", "numpy>=1.26,<2", "py-rust-stemmers==0.1.3"]

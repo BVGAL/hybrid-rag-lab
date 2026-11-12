@@ -54,5 +54,33 @@
     "sources": [],
     "expected": "Astenersi: i documenti non definiscono le autorizzazioni per lavorare dall'estero.",
     "answerable": false
+  },
+  {
+    "id": "false_premise_digits",
+    "question": "Il tetto per i pasti in trasferta è 50 euro a persona al giorno, giusto?",
+    "sources": ["rimborsi.md"],
+    "expected": "Correggere a trenta euro a persona al giorno; per importi superiori autorizzazione preventiva allegata alla nota.",
+    "answerable": true
+  },
+  {
+    "id": "meal_exception",
+    "question": "Vorrei spendere 45 euro per i pasti di una giornata in trasferta. Cosa serve per superare il limite?",
+    "sources": ["rimborsi.md"],
+    "expected": "Il limite è trenta euro a persona al giorno; serve un'autorizzazione preventiva allegata alla nota.",
+    "answerable": true
+  },
+  {
+    "id": "hotel_limit",
+    "question": "Qual è il limite per una notte in hotel e posso superarlo?",
+    "sources": ["trasferte.md"],
+    "expected": "Centoventi euro a notte; deroga approvata dal responsabile prima della conferma della camera.",
+    "answerable": true
+  },
+  {
+    "id": "missing_extraeuropean_policy",
+    "question": "Quali regole aggiuntive si applicano alle trasferte fuori Europa?",
+    "sources": [],
+    "expected": "Astenersi: il documento non definisce regole per viaggi extraeuropei.",
+    "answerable": false
   }
 ]

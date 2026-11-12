@@ -73,8 +73,8 @@ python -m hybrid_rag search "Come risolvo VPN-403?"
 Start Ollama through its desktop application or `ollama serve` in another terminal, then download the model and ask a question:
 
 ```bash
-ollama pull qwen2.5:7b
-python -m hybrid_rag ask "Come risolvo VPN-403?" --model qwen2.5:7b
+ollama pull qwen3:8b
+python -m hybrid_rag ask "Come risolvo VPN-403?" --model qwen3:8b
 ```
 
 The answer uses references such as `[1]`. The CLI prints the corresponding filenames, chunk numbers, and source passages underneath. These numbers refer to the retrieved context for that question; they are not permanent document IDs.
@@ -99,7 +99,7 @@ python -m hybrid_rag evaluate --top-k 1 --output reports/retrieval-k1.json
 python -m hybrid_rag evaluate --top-k 3 --output reports/retrieval-k3.json
 
 # Generate real answers and inspect their citation references
-python scripts/evaluate_answers.py --model qwen2.5:7b
+python scripts/evaluate_answers.py --model qwen3:8b
 ```
 
 `--db` is a global option and must appear before the subcommand. Put private documents in `data/private/`, which is excluded from Git alongside model caches, databases, and `.env` files. The application accepts `.md` and `.txt` files; PDF ingestion is not implemented.
@@ -122,20 +122,22 @@ Raw results: [k=1](reports/retrieval-k1.json), [k=3](reports/retrieval-k3.json).
 
 ### Answer generation
 
-The generation suite contains **8 development cases**: direct questions, a question requiring two sources, an incorrect premise, and two questions without an answer in the corpus.
+The generation suite contains **12 development cases**: direct questions, a question requiring two sources, incorrect premises in words and digits, meal and hotel exceptions, and three questions without an answer in the corpus.
 
 Run `scripts/evaluate_answers.py` against a real Ollama server. It saves the exact prompt settings, model digest, generated answers, retrieved context, and citation numbers in [generation.json](reports/generation.json). It checks whether citation numbers point to available passages. It does **not** automatically establish that a passage supports the associated claim.
 
-The saved run uses **Qwen 2.5 7B with Ollama 0.40.16**, temperature 0, seed 42, and a 4096-token context window.
+The saved run uses **Qwen3 8B with Ollama 0.40.16**, thinking disabled, temperature 0, seed 42, and a 4096-token context window. The application makes one local generation request; it does not add a second model call or hard-coded answers. The report includes the full user prompt for each case.
 
 | Check | Observed result |
 | --- | ---: |
-| Answerable cases returning citations | 5 / 6 |
+| Answerable cases returning citations | 9 / 9 |
 | Out-of-range citation numbers | 0 |
-| Correct abstentions on unanswerable cases | 2 / 2 |
-| Incorrect abstentions on answerable cases | 1 / 6 |
+| Correct abstentions on unanswerable cases | 3 / 3 |
+| Incorrect abstentions on answerable cases | 0 / 9 |
 
-The qualitative review found supported facts in the five cited answers, with an omitted exception in the meal-limit answer. The incorrect-premise case still abstains instead of correcting the amount. These are known limitations, not passing cases hidden from the report.
+The incorrect-premise case now corrects EUR 100 to EUR 30 per person per day. The meal-limit answer now includes prior authorization for higher amounts. Both the model and prompt changed from the previous run, so the improvement cannot be attributed to the prompt alone.
+
+Completeness still needs review: the generic meal answer omits that the authorization must be attached to the expense note; confirmation questions correct the amount without repeating the exception. Some citations cover a paragraph rather than every sentence. The explicit question about exceeding the meal limit does include the required attachment. These counts measure citations and abstention, not overall answer accuracy.
 
 The saved run and its [qualitative review](reports/generation-review.json) document the observed behavior. The prompts were refined on these cases, so this is a development check, not an independent benchmark or an accuracy guarantee.
 

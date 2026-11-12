@@ -25,5 +25,5 @@
     "data/demo/vpn.md": "1cebc691ee36d59bec9e754192b172186904c5c54faf1f31eafb85dd12f21945",
     "data/evaluation.json": "b6828451c0c8936f2007ab758c8462120b29a812c85a3312cbdfe22bf378e95f"
   },
-  "generation": "Real Ollama evaluation: see generation.json and generation-review.json."
+  "generation": "Qwen3 8B, thinking disabled: see generation.json and generation-review.json. Retrieval measurements are unchanged."
 }

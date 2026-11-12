@@ -7,7 +7,7 @@ import time
 from pathlib import Path
 from urllib.request import urlopen
 
-from hybrid_rag.generate import GENERATION_OPTIONS, SYSTEM_PROMPT, generate_answer
+from hybrid_rag.generate import GENERATION_OPTIONS, SYSTEM_PROMPT, build_prompt, generate_answer
 from hybrid_rag.search import SearchIndex
 
 
@@ -20,7 +20,7 @@ def citation_check(answer, results):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--model", default="qwen2.5:7b")
+    parser.add_argument("--model", default="qwen3:8b")
     parser.add_argument("--db", default="storage/index.db")
     parser.add_argument("--dataset", default="data/generation-evaluation.json")
     parser.add_argument("--output", default="reports/generation.json")
@@ -37,6 +37,7 @@ def main():
         "ollama_version": ollama_version,
         "options": GENERATION_OPTIONS,
         "system_prompt": SYSTEM_PROMPT,
+        "think": False,
         "dataset_sha256": hashlib.sha256(Path(args.dataset).read_bytes()).hexdigest(),
         "method": "hybrid", "top_k": 3,
         "note": "Citation numbers are checked automatically. Whether a cited passage supports a claim requires separate review.",
@@ -54,6 +55,7 @@ def main():
             citations = citation_check(answer, results)
             report["cases"].append({
                 **case,
+                "prompt": build_prompt(case["question"], results),
                 "answer": answer,
                 "generation_seconds": elapsed,
                 "citations": citations,
